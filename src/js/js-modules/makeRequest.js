@@ -7,4 +7,4 @@ const makeRequest = async () => {
   return quotes;
 };
 
-export default makeRequest;
+export { makeRequest, quotes };
