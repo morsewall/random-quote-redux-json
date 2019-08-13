@@ -1,5 +1,5 @@
 import { NEW_QUOTE } from "../constants/constants.js";
-import getRandomElement from "../../js/js-modules/getRandomElement.js/index.js";
+import getRandomElement from "../../js/js-modules/getRandomElement.js";
 
 //defining initial state
 const defaultQuote = getRandomElement(quotes);
