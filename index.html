@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- htmlmin:ignore -->
+<!--
+__   __  ___     _______  __   __  _______  ______    _______  __
+|  | |  ||   |   |       ||  | |  ||       ||    _ |  |       ||  |
+|  |_|  ||   |   |_     _||  |_|  ||    ___||   | ||  |    ___||  |
+|       ||   |     |   |  |       ||   |___ |   |_||_ |   |___ |  |
+|       ||   |     |   |  |       ||    ___||    __  ||    ___||__|
+|   _   ||   |     |   |  |   _   ||   |___ |   |  | ||   |___  __
+|__| |__||___|     |___|  |__| |__||_______||___|  |_||_______||__|
+
+!-->
+<!--
+	Copyright (c) 2019 Pat Eskinasy
+	eskinasy.com | @celue
+-->
+<!-- htmlmin:ignore -->
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Greta Thunberg quotes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="src/stylesheets/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+
+<body>
+	<div id="container" class="container">
+		<header>
+		</header>
+		<main>
+			<div id="quote-box">
+				<div class="quotable-square">
+					<div class="content">
+						<div id="text">
+						</div>
+						<div id="author" class="author">
+						</div>
+					</div>
+				</div>
+				<div class="actions">
+					<button id="new-quote" class="new-quote">Get New Quote</button>
+					<button class="tweet-quote">
+						<a id="tweet-quote" href="twitter.com/intent/tweet" target="_blank"><i
+								class="fab fa-twitter"></i>Tweet Quote</a>
+					</button>
+				</div>
+			</div>
+		</main>
+	</div>
+	<footer>
+		<ul class="footer-options">
+			<li class="footer-link"><a href="https://www.morsewall.com/support/" class="footer-linktext">Support me</a>
+			</li>
+			<li class="footer-link"><a href="https://www.morsewall.com/legal/" class="footer-linktext">Legal</a></li>
+			<li class="footer-link"><a href="https://www.morsewall.com/contact/" class="footer-linktext">Contact</a>
+			</li>
+		</ul>
+		<span>© 2019 Developed by Pat Eskinasy. All Rights Reserved.</span>
+	</footer>
+	<!-- adding the Redux library from a precompiled UMD package. window.Redux is the global variable to call Redux. -->
+	<script src="https://unpkg.com/redux@4.0.4/dist/redux.js"></script>
+	<script type="module" src="src/js/index.js"></script>
+	<!-- The below JS is for the widget by makerwidget -->
+	<script src="src/js/vendor/makerwidget.js"></script>
+</body>
+
+</html>
