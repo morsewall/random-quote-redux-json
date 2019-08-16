@@ -7,11 +7,12 @@ import handleAsync from "./js-modules/handleAsync.js";
 
 // The UMD build makes Redux available as a window.Redux global variable
 const Redux = window.Redux;
+
 // The UMD build makes Redux-Thunk available as a window.ReduxThunk.default global variable
 const ReduxThunk = window.ReduxThunk.default;
 
 //creating the Redux store, including Redux Thunk middleware. This is where the state lives.
-const store = Redux.createStore(
+export const store = Redux.createStore(
   getNextQuoteReducer,
   Redux.applyMiddleware(ReduxThunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -24,7 +25,7 @@ store.dispatch(handleAsync());
 const newQuoteButton = document.getElementById("new-quote");
 const quoteTextContent = document.getElementById("text");
 const quoteAuthorContent = document.getElementById("author");
-const tweetButton = document.getElementById("tweet-quote");
+export const tweetButton = document.getElementById("tweet-quote");
 
 //creating store listener function that is called whenever an action is dispatched to the store. The getState() method retrieves the current state held in the Redux store
 store.subscribe(() => {
@@ -58,5 +59,3 @@ store.subscribe(() => {
 newQuoteButton.addEventListener("click", () => {
   store.dispatch(newQuoteActionCreator());
 });
-
-export default tweetButton;
