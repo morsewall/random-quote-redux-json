@@ -1,4 +1,4 @@
-import tweetButton from "../index.js";
+import { tweetButton } from "../index.js";
 
 //defining function that generates a Twitter URL (for Twitter intent) and inject url on HTML, making it a JS function/module
 const getTwitterUrl = quoteObject => {
