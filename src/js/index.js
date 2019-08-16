@@ -4,6 +4,7 @@ import { newQuoteActionCreator } from "../redux/actions/actions.js";
 import getNextQuoteReducer from "../redux/reducers/reducers.js";
 import getTwitterUrl from "./js-modules/getTwitterUrl.js";
 import handleAsync from "./js-modules/handleAsync.js";
+import getRandomElementSelector from "../redux/selectors/selectors.js";
 
 // The UMD build makes Redux available as a window.Redux global variable
 const Redux = window.Redux;
