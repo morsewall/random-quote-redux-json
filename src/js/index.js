@@ -1,6 +1,6 @@
 "use strict";
 
-import newQuoteActionCreator from "../redux/actions/actions.js";
+import { newQuoteActionCreator } from "../redux/actions/actions.js";
 import getNextQuoteReducer from "../redux/reducers/reducers.js";
 import getTwitterUrl from "./js-modules/getTwitterUrl.js";
 import handleAsync from "./js-modules/handleAsync.js";
