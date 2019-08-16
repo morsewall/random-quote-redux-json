@@ -1,7 +1,5 @@
-import {
-  requestingApiData,
-  receivedApiData
-} from "../../redux/actions/actions.js";
+import { requestingApiData } from "../../redux/actions/actions.js";
+import { receivedApiData } from "../../redux/actions/actions.js";
 
 // defining a special action creator that returns a function. The returned function takes dispatch as an argument. Within this function, I can dispatch actions and perform asynchronous requests. It's common to dispatch an action before initiating any asynchronous behavior so that the application state knows that some data is being requested (this state could display a loading icon, for instance). Then, once the application receives the data, another action is dispatched, an action that carries the data as a payload along with information that the action is completed.
 const handleAsync = () => {
