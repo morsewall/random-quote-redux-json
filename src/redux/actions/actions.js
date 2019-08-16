@@ -4,13 +4,13 @@ import { RECEIVED_API_DATA } from "../constants/constants.js";
 import getRandomElementSelector from "../selectors/selectors.js";
 
 // defining action creators related to the asynch function. Action creator is  a function that returns an action (object that contains information about an action-event that has occurred). The action creator gets called by `dispatch()`
-const requestingApiData = () => {
+export const requestingApiData = () => {
   return {
     type: REQUESTING_API_DATA
   };
 };
 
-const receivedApiData = apiData => {
+export const receivedApiData = apiData => {
   return {
     type: RECEIVED_API_DATA,
     quotes: apiData
@@ -18,7 +18,7 @@ const receivedApiData = apiData => {
 };
 
 //defining action creator related to the "Get New Quote" button. a function that returns an action (object that contains information about an action-event that has occurred). The action creator gets called by `dispatch()`
-const newQuoteActionCreator = () => {
+export const newQuoteActionCreator = () => {
   const state = store.getState();
   let quoteObject = getRandomElementSelector(state);
   return {
@@ -26,5 +26,3 @@ const newQuoteActionCreator = () => {
     payload: quoteObject
   };
 };
-
-export { newQuoteActionCreator, requestingApiData, receivedApiData };
