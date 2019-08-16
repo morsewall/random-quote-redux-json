@@ -13,7 +13,7 @@ const ReduxThunk = window.ReduxThunk.default;
 //creating the Redux store, including Redux Thunk middleware. This is where the state lives.
 const store = Redux.createStore(
   getNextQuoteReducer,
-  Redux.applyMiddleware(ReduxThunk.default),
+  Redux.applyMiddleware(ReduxThunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ); //third argument is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
 
