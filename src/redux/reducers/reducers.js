@@ -1,16 +1,32 @@
 import { NEW_QUOTE } from "../constants/constants.js";
-import getRandomElement from "../../js/js-modules/getRandomElement.js";
-import { quotes } from "../../js/js-modules/makeRequest.js";
+import { REQUESTING_API_DATA } from "../constants/constants.js";
+import { RECEIVED_API_DATA } from "../constants/constants.js";
 
-//defining initial state
-const defaultQuote = getRandomElement(quotes);
+// defining default state
+const defaultState = {
+  status: "",
+  quotes: []
+};
 
-//defining reducer function to allow the Redux store to know how to respond to the action created
-const getNextQuoteReducer = (state = defaultQuote, action) => {
+//defining reducer functions to allow the Redux store to know how to respond to the action created
+const getNextQuoteReducer = (state = defaultState, action) => {
   switch (action.type) {
+    case REQUESTING_API_DATA:
+      return {
+        ...state,
+        status: "waiting",
+        quotes: []
+      };
+    case RECEIVED_API_DATA:
+      return {
+        ...state,
+        status: "received",
+        quotes: action.quotes
+      };
     case NEW_QUOTE:
       return {
         ...state,
+        status: "new quote",
         data: action.payload
       };
     default:

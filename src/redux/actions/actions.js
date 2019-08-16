@@ -1,14 +1,30 @@
 import { NEW_QUOTE } from "../constants/constants.js";
-import getRandomElement from "../../js/js-modules/getRandomElement.js";
-import { quotes } from "../../js/js-modules/makeRequest.js";
+import { REQUESTING_API_DATA } from "../constants/constants.js";
+import { RECEIVED_API_DATA } from "../constants/constants.js";
+import getRandomElementSelector from "../../js/js-modules/getRandomElementSelector.js";
 
-//defining action creator. a function that returns an action (object that contains information about an action-event that has occurred). The action creator gets called by `dispatch()`
+// defining action creators related to the asynch function. Action creator is  a function that returns an action (object that contains information about an action-event that has occurred). The action creator gets called by `dispatch()`
+const requestingApiData = () => {
+  return {
+    type: REQUESTING_API_DATA
+  };
+};
+
+const receivedApiData = apiData => {
+  return {
+    type: RECEIVED_API_DATA,
+    quotes: apiData
+  };
+};
+
+//defining action creator related to the "Get New Quote" button. a function that returns an action (object that contains information about an action-event that has occurred). The action creator gets called by `dispatch()`
 const newQuoteActionCreator = () => {
-  let quoteObject = getRandomElement(quotes);
+  const state = store.getState();
+  let quoteObject = getRandomElementSelector(state);
   return {
     type: NEW_QUOTE,
     payload: quoteObject
   };
 };
 
-export default newQuoteActionCreator;
+export { newQuoteActionCreator, requestingApiData, receivedApiData };
