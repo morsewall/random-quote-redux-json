@@ -23,7 +23,7 @@ const ReduxThunk = window.ReduxThunk.default;
 //creating the Redux store, including Redux Thunk middleware. This is where the state lives.
 export const store = Redux.createStore(
   getNextQuoteReducer,
-  compose(
+  Redux.compose(
     Redux.applyMiddleware(ReduxThunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
