@@ -20,17 +20,24 @@ const ReduxThunk = window.ReduxThunk.default;
 // ); //third argument is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
 // getting "Uncaught Error: It looks like you are passing several store enhancers to createStore(). This is not supported. Instead, compose them together to a single function at Object.createStore (redux.js:106)" on Chrome.
 
-const devTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+// const devTools =
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-//creating the Redux store, including Redux Thunk middleware. This is where the state lives.
+// //creating the Redux store, including Redux Thunk middleware. This is where the state lives.
+// export const store = Redux.createStore(
+//   getNextQuoteReducer,
+//   Redux.compose(
+//     Redux.applyMiddleware(ReduxThunk),
+//     devTools
+//   )
+// ); //second argument in compose() is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export const store = Redux.createStore(
   getNextQuoteReducer,
-  Redux.compose(
-    Redux.applyMiddleware(ReduxThunk),
-    devTools
-  )
-); //second argument in compose() is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
+  /* preloadedState, */ composeEnhancers(Redux.applyMiddleware(ReduxThunk))
+);
 
 //dispatching the asynch special action creator
 store.dispatch(handleAsync());
