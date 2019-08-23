@@ -32,7 +32,8 @@ const ReduxThunk = window.ReduxThunk.default;
 //   )
 // ); //second argument in compose() is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || Redux.compose;
 
 export const store = Redux.createStore(
   getNextQuoteReducer,
