@@ -13,10 +13,8 @@ const handleAsync = () => {
       );
       const responseObject = await responseJSON.json();
       const quotes = responseObject.quotes;
-      // console.log(quotes);
       // dispatch received data action here
       store.dispatch(receivedApiData(quotes));
-      // console.log(receivedApiData(quotes));
     };
     makeRequest();
   };
