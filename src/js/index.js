@@ -12,7 +12,7 @@ const Redux = window.Redux;
 // The UMD build makes Redux-Thunk available as a window.ReduxThunk.default global variable
 const ReduxThunk = window.ReduxThunk.default;
 
-//to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
+//to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history. When the extension is not installed, I'm using Redux’ compose.
 const composeEnhancers =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || Redux.compose;
 
@@ -50,6 +50,7 @@ store.subscribe(() => {
     getTwitterUrl(quoteObject);
   }
   if (state.status == "new quote") {
+    console.log(state);
     //inject random quote on HTML
     quoteTextContent.innerHTML = state.data.quoteText;
     //inject author on HTML
