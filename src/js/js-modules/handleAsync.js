@@ -12,9 +12,9 @@ const handleAsync = () => {
         "https://cdn.jsdelivr.net/gh/morsewall/jsondb@master/db.json"
       );
       const responseObject = await responseJSON.json();
-      const quotes = responseObject.quotes;
+      const quotesArray = responseObject.quotes;
       // dispatch received data action here
-      store.dispatch(receivedApiData(quotes));
+      store.dispatch(receivedApiData(quotesArray));
     };
     makeRequest();
   };
