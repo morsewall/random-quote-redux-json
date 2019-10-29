@@ -1,4 +1,4 @@
-//defining a Redux selection, i.e. it takes Redux state as an argument and return some data from it
+//defining a Redux selection,  i.e. it will be used to take Redux state as an argument and return some data from it
 const getRandomElementSelector = stateObject => {
   let array = stateObject.quotes;
   //access random quote from array
