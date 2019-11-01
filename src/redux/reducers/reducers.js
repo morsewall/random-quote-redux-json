@@ -21,13 +21,13 @@ const getNextQuoteReducer = (state = defaultState, action) => {
       return {
         ...state,
         status: "received",
-        quotesData: action.quotes
+        quotesData: action.payloadQuotes
       };
     case NEW_QUOTE:
       return {
         ...state,
         status: "new quote",
-        data: action.payload
+        data: action.payloadQuote
       };
     default:
       return state;

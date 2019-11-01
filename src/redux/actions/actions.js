@@ -14,7 +14,7 @@ export const requestingApiData = () => {
 export const receivedApiData = apiData => {
   return {
     type: RECEIVED_API_DATA,
-    quotes: apiData
+    payloadQuotes: apiData
   };
 };
 
@@ -24,6 +24,6 @@ export const newQuoteActionCreator = () => {
   let quoteObject = getRandomElementSelector(state);
   return {
     type: NEW_QUOTE,
-    payload: quoteObject
+    payloadQuote: quoteObject
   };
 };
