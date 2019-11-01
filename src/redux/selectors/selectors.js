@@ -1,6 +1,6 @@
 //defining a Redux selection,  i.e. it will be used to take Redux state as an argument and return some data from it
 const getRandomElementSelector = stateObject => {
-  let array = stateObject.quotes;
+  let array = stateObject.quotesData;
   //access random quote from array
   return array[Math.floor(Math.random() * array.length)];
 };

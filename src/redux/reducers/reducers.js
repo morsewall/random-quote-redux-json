@@ -5,7 +5,7 @@ import { RECEIVED_API_DATA } from "../constants/constants.js";
 // defining default state
 const defaultState = {
   status: "",
-  quotes: []
+  quotesData: []
 };
 
 //defining reducer functions to allow the Redux store to know how to respond to the action created
@@ -15,13 +15,13 @@ const getNextQuoteReducer = (state = defaultState, action) => {
       return {
         ...state,
         status: "waiting",
-        quotes: []
+        quotesData: []
       };
     case RECEIVED_API_DATA:
       return {
         ...state,
         status: "received",
-        quotes: action.quotes
+        quotesData: action.quotes
       };
     case NEW_QUOTE:
       return {
