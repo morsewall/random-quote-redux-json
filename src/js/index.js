@@ -38,9 +38,6 @@ store.subscribe(() => {
     console.log("Loading…");
   }
   if (state.status == "received") {
-    console.log(state);
-
-    console.log(state.quotes);
     let quoteObject = getRandomElementSelector(state);
     //inject random quote on HTML
     quoteTextContent.innerHTML = quoteObject.quoteText;
@@ -50,7 +47,6 @@ store.subscribe(() => {
     getTwitterUrl(quoteObject);
   }
   if (state.status == "new quote") {
-    console.log(state);
     //inject random quote on HTML
     quoteTextContent.innerHTML = state.data.quoteText;
     //inject author on HTML
